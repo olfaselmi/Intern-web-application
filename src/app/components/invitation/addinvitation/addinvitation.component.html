@@ -1,0 +1,70 @@
+<form  class="form-section" [formGroup]="myForm"  (ngSubmit)="add()">
+
+    <h1>add Invitation !</h1>
+    
+   
+
+    
+
+    <div class="form-group"> 
+        <label>dateinvitation</label>
+        <input type="date" class="form-control" formControlName="dateinvitation">
+    </div>
+
+    <!-- <div class="form-group"> 
+        <label> state</label>
+        <input type="text" class="form-control" formControlName="state">
+    </div> -->
+
+    <div class="form-group">
+        <label for="type">state</label>
+      </div>
+      <div class="form-group">
+        <div class="form-group">
+          <div class="form-line">
+            <select
+              class="form-control"
+              name="state"
+              id="state"
+              formControlName="state">
+              <option value="true">
+                true
+              </option>
+
+              <option value="false">false</option>
+            
+
+            </select>
+          </div>
+        </div>
+      </div>
+    <div class="form-group"> 
+        <label> Email</label>
+        <input type="text" class="form-control" formControlName="email">
+    </div>
+    
+  
+    <div class="container-fluid py-3">
+        <h1>Angular Google reCAPTCHA v2</h1>
+        
+        <form #form="ngForm">
+          <div class="row mt-3">
+            <div class="col-sm-12 mb-2">
+              <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+              <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+           
+    
+          </div>
+        </form>
+        </div>  
+
+        <div class="boutonAddopportunity"><input [disabled]="myForm.invalid"  type="submit" class="btn btn-success" (click)="send(form)" value="Submit"> </div>
+</form>
+
+
+

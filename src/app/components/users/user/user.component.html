@@ -1,0 +1,73 @@
+
+                    <br/>
+                    <br/>
+                    <br/>
+
+<div class="page-content page-container" id="page-content">
+    <div id="userspdf">
+      <div class="row container d-flex justify-content-center">
+        <div class="col-xl-9 col-md-12">
+          <div class="card user-card-full">
+            <div class="row m-l-0 m-r-0">
+              <div class="col-sm-4 bg-c-lite-green provider-profile"> 
+                <br/>
+                <div class="card-block text-center text-white" >
+                  <button class="btn btn-success m-b-2" [routerLink]="['/users']">Back</button>
+                  <button class="btn btn-warning m-b-2" (click)="pdfMaker()">Download details</button>
+                  
+                  <div class="m-b-25"> <img src="../../../../assets/images/users/user.jpg" width="40%" class="img-radius" alt="Stock-Profile-Image"> </div>
+                  <h6 style="color: midnightblue;"  class="f-w-600">{{user.name}} </h6>
+
+                  <button [hidden]="user.blocked" class="btn btn-danger f-w-600" (click)="blockUser()">Block</button>
+                  <button [hidden]="!user.blocked" class="btn btn-danger f-w-600" (click)="unblockUser()">Unblock</button>
+                  <h6 class="f-w-600">Name : {{user.name}} </h6>
+                  
+                  <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"><h5>Name :{{user.name}}</h5> </i>
+                </div>
+              </div>
+            
+              <div class="col-md-8">
+                <div class="card-block">
+                  <div class="row">
+                    <br/>
+                    <br/>
+                    <h4 style="color: forestgreen;">User details:</h4>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <h6 class="text-muted f-w-400">Email:{{user.email}}</h6>
+                    <h6 class="text-muted f-w-400">Role : {{user.role}}</h6>
+                    <h6 class="text-muted f-w-400">Address: {{user.adress}}</h6>
+                    <h6 class="text-muted f-w-400">Birthdate: {{user.dateNaiss}}</h6>
+                    <h6 [hidden]="!user.domain" class="text-muted f-w-400">Domain:{{user.domain}}</h6>
+                    <h6 [hidden]="!user.profession" class="text-muted f-w-400">Profession:{{user.profession}}</h6>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+
+<div class="container"><div class=" text-center mt-5 ">
+
+
+   
+</div>
+
+</div>
+
+
+
+
+
+
+           
+  

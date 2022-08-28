@@ -1,0 +1,154 @@
+<header id="page-topbar">
+    <div class="navbar-header">
+        <div class="d-flex">
+            <!-- LOGO -->
+            <div class="navbar-brand-box" [hidden]="!loggedIn">
+         
+                <a href="index.html" class="logo logo-dark">
+                   
+                    <span class="logo-lg">
+                        <img src="https://scontent.ftun14-1.fna.fbcdn.net/v/t1.18169-9/22528195_1882185548764669_1167585774444550408_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=b0AzIuQJqMUAX8TeIEi&_nc_ht=scontent.ftun14-1.fna&oh=00_AT9IJtQIT1WXtZemJE-8HMnYGG6cT0WioMmMKswFyC8DVg&oe=63294305" alt="" height="100">
+                    </span>
+                </a>
+            </div>
+
+            <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
+                <i class="mdi mdi-menu"></i>
+            </button>
+
+            <div class="d-none d-sm-block ms-2">
+                <h4 class="page-title font-size-18">Tableau de bord
+                </h4>
+            </div>
+
+        </div>
+
+        <!-- Search input -->
+        <div class="dropdown d-inline-block ms-2 ">
+            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+                <span>Statistiques
+                </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end">
+                <!-- item-->
+                <a class="dropdown-item" routerLink="/statistics"><i style="font-size:24px" class="fa font-size-16 align-middle me-2">&#xf080;</i>
+                    charts</a>
+               
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="https://www.javatpoint.com/classification-and-predication-in-data-mining"><i class="fa fa-eye font-size-16 align-middle me-2"></i>
+                    predict</a>
+            </div>
+        </div>
+        
+
+        <div class="d-flex">
+
+            <div class="dropdown d-inline-block ms-2">
+                <button type="button" class="btn header-item noti-icon waves-effect"
+                    id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="ion ion-md-notifications"></i>
+                    <span class="badge bg-danger rounded-pill">3</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                    aria-labelledby="page-header-notifications-dropdown">
+                    <div class="p-3">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h5 class="m-0 font-size-16"> Notification (3) </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-simplebar style="max-height: 230px;">
+                        <a href="" class="text-reset notification-item">
+                            <div class="media d-flex">
+                                <div class="avatar-xs me-3">
+                                    <span class="avatar-title bg-success rounded-circle font-size-16">
+                                        <i class="mdi mdi-cart-outline"></i>
+                                    </span>
+                                </div>
+                                <div class="flex-1">
+                                    <h6 class="mt-0 font-size-15 mb-1">Your order is placed</h6>
+                                    <div class="font-size-12 text-muted">
+                                        <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a routerLink="/userstravel" class="text-reset notification-item">
+                            <div class="media d-flex">
+                                <div class="avatar-xs me-3">
+                                    <span class="avatar-title bg-warning rounded-circle font-size-16">
+                                        <i class="mdi mdi-message-text-outline"></i>
+                                    </span>
+                                </div>
+                                <div class="flex-1">
+                                    <h6 class="mt-0 font-size-15 mb-1">travel's assigned to you</h6>
+                                    <div class="font-size-12 text-muted">
+                                        <p class="mb-1">as a Traveler check your trips </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a routerLink="/matching" class="text-reset notification-item">
+                            <div class="media d-flex">
+                                <div class="avatar-xs me-3">
+                                    <span class="avatar-title bg-info rounded-circle font-size-16">
+                                        <i class="mdi mdi-glass-cocktail"></i>
+                                    </span>
+                                </div>
+                                <div class="flex-1">
+                                    <h6 class="mt-0 font-size-15 mb-1">Matching </h6>
+                                    <div class="font-size-12 text-muted">
+                                        <p class="mb-1">match your partner </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="p-2 border-top text-center">
+                        <a class="btn btn-sm btn-link font-size-14 w-100" href="javascript:void(0)">
+                            View all
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngIf="loggedIn">
+            <div class="dropdown d-inline-block ms-2 ">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" src="https://media-exp1.licdn.com/dms/image/D4E03AQEYUT77b5_bhA/profile-displayphoto-shrink_400_400/0/1648930981773?e=1666224000&v=beta&t=zUpWTEXJL6DFiDXXSTRs3RJ-ExyNtkZjctqxDQfBSck"
+                        alt="Header Avatar">
+                    <span class="m-3 ">{{name}}</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <a class="dropdown-item" href="/reset-password"><i class="dripicons-user font-size-16 align-middle me-2"></i>
+                        Change Password</a>
+                   
+                    <div class="dropdown-divider"></div>
+                   
+                <a class="dropdown-item" (click)="logout()"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                        Logout</a>
+                </div>
+            </div>
+
+        </ng-container>
+
+        <ng-container *ngIf="!loggedIn">
+            <div class="dropdown d-inline-block ms-2 ">
+                <a class="dropdown-item" href="/login"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
+                    Vous devez vous connecter pour continuer</a>
+            </div>
+            
+
+        </ng-container>
+
+        </div>
+    </div>
+</header>

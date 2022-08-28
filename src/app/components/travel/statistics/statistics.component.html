@@ -1,0 +1,158 @@
+<div class="container">
+    <div class="row">
+    <div class="col-lg-4 col-md-6" style="margin-top: 20px">
+                <div class="card border-primary">
+                    <div class="card-body bg-primary text-white">
+                        <div class="row">
+                            <div class="col-3">
+                                <i class="fa fa-random fa-5x"></i>
+                            </div>
+
+
+                            <div class="col-9 text-right"  >
+                              <h1 *ngIf="nbrTravel"> {{nbrTravel}}</h1>
+                            
+                              <h4>  Travels</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" style="margin-top: 20px">
+                <div class="card border-secondary">
+                    <div class="card-body bg-secondary text-white">
+                        <div class="row">
+                            <div class="col-3">
+                                <i class="fas fa-user-plus fa-5x"></i>
+                            </div>
+                            <div class="col-9 text-right">
+                                <h1 style="margin-left: 8%;">20</h1>
+                                <h4 style="margin-left: 8%;">  Travelers</h4>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" style="margin-top: 20px">
+                <div class="card border-success">
+                    <div class="card-body bg-success text-white">
+                        <div class="row">
+                            <div class="col-3">
+                                <i class="fa fa-user-tie fa-5x"></i>
+                            </div>
+                            <div class="col-9 text-right">
+                                <h1 style="margin-left: 8%;">50</h1>
+                                <h4 style="margin-left: 8%;">  Employees</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" style="margin-top: 20px">
+                <div class="card border-danger">
+                    <div class="card-body bg-danger text-white">
+                        <div class="row">
+                            <div class="col-3">
+                                <i class="fa fa-book fa-5x"></i>
+                            </div>
+                            <div class="col-9 text-right">
+                                <h1>60</h1>
+                                <h4>  opportunities</h4>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" style="margin-top: 20px">
+                <div class="card border-warning">
+                    <div class="card-body bg-warning text-white">
+                        <div class="row">
+                            <div class="col-3">
+                                <i class="fa fa-university fa-5x"></i>
+                            </div>
+                            <div class="col-9 text-right" >
+                                <h1 style="margin-left: 8%;"> 400 </h1>
+                                <h4 style="margin-left: 8%;">  companies</h4>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" style="margin-top: 20px">
+                <div class="card border-info">
+                    <div class="card-body bg-info text-white">
+                        <div class="row">
+                            <div class="col-3">
+                                <i class="	fa fa-bullhorn fa-5x"></i>
+                            </div>
+                            <div class="col-9 text-right">
+                               
+                                <h1 style="margin-left: 8%;"> 30 </h1>
+                                <h4 style="margin-left: 8%;"> Events </h4>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <nav class="navbar navbar-expand navbar-light bg-primary">
+        <div class="nav navbar-nav">
+          <h5 class="nav-item nav-link active text-white">NGX-CHARTS DASHBOARD FOR TRAVEL </h5>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="row pt-2">
+          <div class="col-md-12">
+            <div class="card text-left">
+              <div class="card-body">
+                <h4 class="card-title border-bottom">Vertical Bar Charts</h4>
+                <ngx-charts-bar-vertical 
+                    [view]="[1000,400]"
+                    [results]="Stat"
+                    [xAxisLabel]="'Traveler name'"
+                    [legendTitle]="'Travel Chart'"
+                    [yAxisLabel]="'number of travels'"
+                    [legend]="true"
+                    [showXAxisLabel]="true"
+                    [showYAxisLabel]="true"
+                    [xAxis]="true"
+                    [yAxis]="true"
+                    [gradient]="true">
+                </ngx-charts-bar-vertical>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card text-left">
+              <div class="card-body">
+                <h4 class="card-title border-bottom">Advanced Pie Charts</h4>
+                <ngx-charts-advanced-pie-chart 
+                      [results]="Stat"
+                      [gradient]="true" >
+                </ngx-charts-advanced-pie-chart>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card text-left">
+              <div class="card-body">
+                <h4 class="card-title border-bottom">Pie Grid Charts</h4>
+                <ngx-charts-pie-grid 
+                  [results]="Stat" >
+                </ngx-charts-pie-grid>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+
+      <app-opportunitystatistic></app-opportunitystatistic>

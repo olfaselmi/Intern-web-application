@@ -1,0 +1,28 @@
+<div class="table-responsive">
+  <div>
+    <div scope="col"> <button class="btn btn-primary " (click)="showForm()">Add invitation</button></div>
+    <app-addinvitation (aded)="addInvitation($event)" *ngIf="showAdd"></app-addinvitation>
+    <td><button class="btn btn-info" routerLink="/calender">Calender</button></td>
+
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"> Num Invitation</th>
+        <th scope="col">state</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of invitationData;index as i">
+          <td>{{item.idInvi}}</td>
+        <td>{{item.state}}</td>
+        <td>{{item.email}}</td>
+        <td><button class="btn btn-danger" (click)="deleteInvitation(item.idInvi)">Delete</button></td>
+        <td><button class="btn btn-info" (click)="updateInvitation(item.idInvi)">Edit</button></td>
+        <td><button class="btn btn-info" (click)=" AcceptInvitation(item.idInvi,i)">Accept Invitation</button>
+        </td>
+      </tr>
+  </table>
+</div>
+<!-- /.container-fluid -->

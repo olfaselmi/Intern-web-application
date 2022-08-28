@@ -1,0 +1,120 @@
+<div class="container">
+    <div class=" text-center mt-5 ">
+  
+    </div>
+    <div class="row ">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+          <div class="card-body bg-light">
+            <div class="container">
+              <form class="form-card" #f="ngForm">
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Name<span class="text-danger"> *</span></label>
+                    <input type="text" name="name" id="name" class="form-control" [(ngModel)]="user.name" required
+                      minlength="3" #fn="ngModel">
+                    <div class="alert alert-danger" *ngIf="fn.invalid && fn.touched">
+                      <div *ngIf="fn.hasError('required')"> name is a required field</div>
+                      <div *ngIf="fn.hasError('minlength')"> name minlength ies equal to 3</div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
+                    <input type="email" name="email" id="email" class="form-control" [(ngModel)]="user.email" required
+                      minlength="3" #em="ngModel">
+                    <div class="alert alert-danger" *ngIf="em.invalid && em.touched">
+                      <div *ngIf="em.hasError('required')"> Email is a required field</div>
+                      <div *ngIf="em.hasError('minlength')"> Email minlength ies equal to 3</div>
+                    </div>
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Phone Number<span class="text-danger"> *</span></label>
+                    <input type="number" name="adress" id="adress" class="form-control" [(ngModel)]="user.phoneNbr"
+                      required maxlength="8" #phoneNbr="ngModel">
+                    <div class="alert alert-danger" *ngIf="phoneNbr.invalid && phoneNbr.touched">
+                      <div *ngIf="phoneNbr.hasError('required')"> Phone Number is a required field</div>
+                      <div *ngIf="phoneNbr.hasError('maxlength')"> Phone Number must have 8 numbers</div>
+                    </div>
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Address<span class="text-danger"> *</span></label>
+                    <input type="text" name="adress" id="adress" class="form-control" [(ngModel)]="user.adress"
+                      required minlength="3" #adress="ngModel">
+                    <div class="alert alert-danger" *ngIf="adress.invalid && adress.touched">
+                      <div *ngIf="adress.hasError('required')"> Address is a required field</div>
+                      <div *ngIf="adress.hasError('minlength')"> Address minlength is equal to 3</div>
+                    </div>
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Password<span class="text-danger"> *</span></label>
+                    <input type="password" name="password" id="password" class="form-control" [(ngModel)]="user.password"
+                      required minlength="3" #pw="ngModel">
+                    <div class="alert alert-danger" *ngIf="pw.invalid && pw.touched">
+                      <div *ngIf="pw.hasError('required')"> Password is a required field</div>
+                      <div *ngIf="pw.hasError('minlength')"> Password minlength ies equal to 3</div>
+                    </div>
+  
+                   
+                      
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">BirthDate<span class="text-danger"> *</span></label>
+                    <input type="date" name="dateNaiss" id="dateNaiss" class="form-control" [(ngModel)]="user.dateNaiss" required
+                      minlength="3" #dateNaiss="ngModel">
+                    <div class="alert alert-danger" *ngIf="dateNaiss.invalid && dateNaiss.touched">
+                      <div *ngIf="dateNaiss.hasError('required')"> BirthDate is a required field</div>
+                      <div *ngIf="dateNaiss.hasError('minlength')"> BirthDate minlength ies equal to 3</div>
+                    </div>
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Role<span class="text-danger"> *</span></label>
+  
+                      <select name="role" id="role" class="form-control" [(ngModel)]="user.role" required
+                      minlength="3" #role="ngModel" >
+                        <option value="Admin">Admin</option>
+                        <option value="DR">DR</option>
+                        <option value="ResponsableStructure" selected>ResponsableStructure</option>
+                        <option value="Superviseur">Superviseur</option>
+                       </select> 
+                    <div class="alert alert-danger" *ngIf="role.invalid && role.touched">
+                      <div *ngIf="role.hasError('required')"> Role is a required field</div>
+                      <div *ngIf="role.hasError('minlength')"> Role minlength ies equal to 3</div>
+                    </div>
+  
+                  </div>
+                </div>
+                <ng-container *ngIf="user.role == 'DR'">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Domain name<span class="text-danger"> *</span></label>
+                                     <input type="text" name="domain" id="domain" class="form-control"
+                                     [(ngModel)]="user.domain" required minlength="3" #domain="ngModel">                                   
+                                     <div class="alert alert-danger" *ngIf="domain.invalid && domain.touched">
+                                      <div *ngIf="domain.hasError('required')"> Domain Name is a required field</div>
+                                      <div *ngIf="domain.hasError('minlength')"> Domain Name minlength ies equal to 3</div>
+                                    </div>
+                  </div> 
+                 </ng-container>
+                 <ng-container *ngIf="user.role == 'Admin' || user.role == 'ResponsableStructure' ">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    <label class="form-control-label px-3">Profession name<span class="text-danger"> *</span></label>
+                                     <input type="text" name="profession" id="profession" class="form-control"
+                                     [(ngModel)]="user.profession" required minlength="3" #profession="ngModel">                                   
+                                     <div class="alert alert-danger" *ngIf="profession.invalid && profession.touched">
+                                      <div *ngIf="profession.hasError('required')"> Profesion Name is a required field</div>
+                                      <div *ngIf="profession.hasError('minlength')"> Profession Name minlength ies equal to 3</div>
+                                    </div>
+                  </div> 
+                 </ng-container>
+                <br/>
+                <br/>
+                <div class="row justify-content-end">
+                  <div class="form-group col-auto"> <button class="btn-primary" (click)="f.reset()">Reset</button> </div>
+                  <div class="form-group col-auto"> <button type="submit" class="btn-primary" (click)="save()"
+                      [disabled]="f.invalid">Register</button> </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-6">
+        <div class="card px-5 py-5" id="form1">
+          <form class="form-data" #f="ngForm">
+              <h2>Bienvenue à nouveau, veuillez vous connecter.</h2>
+              <br/>
+
+            <div class="forms-inputs mb-4"> <span>Email </span>
+              <input  type="text"  class="form-control" [(ngModel)]="user.email" id="email" name="email"  required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" #em="ngModel">
+              <div class="alert alert-danger" *ngIf="em.invalid && em.touched">
+                <div *ngIf="em.hasError('required')"> l'email est un champ obligatoire</div>
+                <div *ngIf="em.hasError('pattern')"> respecter ce format xxxx@xxxx.xxx</div>
+              </div>
+            </div>
+            <div class="forms-inputs mb-4"> <span>Mot de passe
+            </span>
+              <input  type="password" class="form-control" id="pass" name="pass" [(ngModel)]="user.password" required  #pw="ngModel">
+              <div class="alert alert-danger" *ngIf="pw.invalid && pw.touched">
+                <div *ngIf="pw.hasError('required')"> Mot de passe est un champ obligatoire
+                </div>
+              </div>
+            </div>
+            <div class="mb-3"> <button  class="btn btn-primary w-100" [disabled]="f.invalid" (click)="Authenticate()">Connexion</button> </div>
+            <p class="text-center">pas un membre? <a data-toggle="tab" [routerLink]="['/register']">S'inscrire
+            </a></p>
+            <div class="alert alert-danger" *ngIf="msg!=''">
+              <div>{{msg}}</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

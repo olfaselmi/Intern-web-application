@@ -1,0 +1,100 @@
+<div class="table-responsive">
+  <div>
+    <div scope="col"> <button class="btn btn-primary " (click)="showForm()">Ajouter un equipement</button></div>
+    <app-addEquipement (aded)="addEquipement($event)" *ngIf="showAdd"></app-addEquipement>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nature équipement</th>
+        <th scope="col">Marque et Modèle</th>
+        <th scope="col">Code à barres</th>
+        <th scope="col">Diagnostic du Technicien Régional</th>
+        <th scope="col">Date d'Affectation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of EquipementData;index as i">
+        <td >{{item.nature}}</td>
+        <td >{{item.marque}}</td>
+         <!--<td *ngIf="item.Codeabarre ==null "> null </td>--> 
+      <td >{{item.Codeabarre}}</td>
+         <td>{{item.diagnostic}}</td>
+         <td>{{item.date_Affectation | date:'yyyy-MM-dd hh:mm'}}</td>
+        <td><button class="btn btn-danger" (click)="deleteEquipement(item.idEq)">Delete</button></td>
+        <td><button class="btn btn-info" (click)="updateEquipement(item.idEq)">Edit</button></td>
+      </tr>
+  </table>
+  <td><button class="btn btn-info" (click)="getEquipement()">Obtenir la fiche livraison (PDF)</button></td>
+</div>
+<!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Begin Page Content 
+    <div style="margin-right: 500px;" class="container-fluid">
+     
+      <div  class="card shadow mb-4">
+          <div class="card-header py-3">
+          </div>
+          <div class="card-body">
+            <div>
+              <div scope="col">  <button class="btn btn-primary " (click)="showForm()">Ajouter un equipement</button></div>
+        <app-addEquipement (aded)="addEquipement($event)" *ngIf="showAdd"></app-addEquipement>
+            </div>
+              <div class="table-responsive">
+                              <table  class="table">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Nature équipement</th>
+                                      <th scope="col">Marque et Modèle</th>
+                                      <th scope="col">Code à barres</th>
+                                      <th scope="col">Diagnostic du Technicien Régional</th>
+                                      <th scope="col">Date d'Affectation</th>
+                                    </tr>
+                                  </thead>
+                               <tbody>
+                                    <tr *ngFor="let item of EquipementData 
+                                    | paginate: { itemsPerPage: tableSize, currentPage: page,totalItems: count };let i = index">
+                                <th scope="row">{{item.nature}}</th>
+                                     <td >{{item.marque}}</td>
+                                      <td>{{item.Codeabarre}}</td>
+                                      <td>{{item.diagnostic}}</td>
+                                      <td>{{item.date_Affectation | date:'yyyy-MM-dd hh:mm'}}</td>
+                                      <td><button class="btn btn-danger"(click)="deleteEquipement(item.idEq,i)">Supprimer</button></td>
+                                      <td><button class="btn btn-info" (click)="updateEquipement(item.idEq)" >Modifier</button></td>                                   
+</tr>
+        
+                                  </tbody>
+                                </table>
+                                <div style="margin-left: 400px;" class="d-flex justify-content-center">
+                                  <pagination-controls
+                                      previousLabel="Précédent" nextLabel="Suivant" (pageChange)="onTableDataChange($event)" >
+                                  </pagination-controls>
+                                    </div>
+                                    <td><button class="btn btn-info" (click)="getEquipement()">Obtenir la fiche livraison (PDF)</button></td>
+                               -->

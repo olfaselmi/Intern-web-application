@@ -1,0 +1,9 @@
+<section style="background-color: #eee">
+    <div class="container my-5 py-5" *ngFor="let post of list">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 col-lg-10 col-xl-8">
+          <app-card-post [post]="post"></app-card-post>
+        </div>
+      </div>
+    </div>
+  </section>

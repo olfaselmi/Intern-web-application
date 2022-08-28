@@ -1,0 +1,30 @@
+<div class="complaint-section" >
+    <table class="table-bordered" style="width: 100%;">
+      <thead>
+      <tr>
+        <th>email</th>
+        <th>badge</th>
+        <th>first name</th>
+        <th>last name</th>
+        <th>employee type</th>
+  
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of usersList">
+        <th scope="row">{{c.email}}</th>
+        <td>{{c.badge}}</td>
+        <td>{{c.firstName}}</td>
+        <td>{{c.lastName}}</td>
+        <td> 
+          <button class="btn btn-danger" *ngIf="c.employeeType === 'Badtravellor'">{{c.employeeType}}</button>
+            <button class="btn btn-info" *ngIf="c.employeeType === 'GoodTravellor'">{{c.employeeType}}</button>
+        <button class="btn btn-success" *ngIf="c.employeeType === 'ExcellentTravellor'">{{c.employeeType}}</button>
+
+        </td>
+      </tr>
+      </tbody>
+  
+    </table>
+
+  </div>

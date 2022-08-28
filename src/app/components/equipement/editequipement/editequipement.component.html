@@ -1,0 +1,40 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Modifier Equipement </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        
+        <div class="form-group">
+            <label> Nature</label>
+            <input type="text" class ="form-control" id = "Nature" [(ngModel)] = Equipement.Nature name = "Nature">
+        </div>
+      
+
+        
+        
+    
+        <div class="form-group">
+            <label> Marque</label>
+            <input type="text" class ="form-control" id = "Marque"
+                [(ngModel)] = "Equipement.Marque" name = "Marque">
+        </div>
+        <div class="form-group">
+            <label> Code à Barres </label>
+            <input type="text" class ="form-control" id = "Codeabarre"
+                [(ngModel)] = "Equipement.Codeabarre" name = "Codeabarre">
+        </div>
+       
+
+        <div class="form-group">
+            <label>Diagnostic</label>
+            <input type="text" class ="form-control" id = "Diagnostic"
+                [(ngModel)] = "Equipement.Diagnostic" name = "Diagnostic">
+        </div>
+        <div class="form-group">
+            <label> Date_Affectation</label>
+            <input type="date" class ="form-control" id = "Date_Affectation" [(ngModel)] = Equipement.Date_Affectation name = "Date_Affectation">
+        </div>
+
+        <button class = "btn btn-success" type ="submit">Modifier</button>
+    
+    </form>
+    </div> 

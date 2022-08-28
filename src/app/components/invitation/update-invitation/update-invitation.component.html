@@ -1,0 +1,45 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Invitation </h3>
+    <form (ngSubmit) ="onSubmit()">
+    
+        	
+        <div class="form-group">
+            <label>   idInvitation</label>
+            <input type="text" class ="form-control" id = "description" [(ngModel)] = Invitation.idInvitation name = "description">
+        </div>
+        
+        
+        
+    
+       
+
+        <div class="form-group">
+            <label>state</label>
+            <input type="text" class ="form-control" id = "etat"
+                [(ngModel)] = "Invitation.state" name = "etat">
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <label> Email</label>
+            <input type="text" class ="form-control" id = "subject"
+                [(ngModel)] = "Invitation.Email" name = "subject">
+        </div>
+
+
+
+
+
+
+
+
+
+        
+
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
