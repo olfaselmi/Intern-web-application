@@ -1,27 +1,33 @@
-# DemoProj
+# Intern Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This repository hosts the front-end Angular code for the Intern Web Application developed during my internship. The application is built using the Angular framework to create a single-page application with responsive design and interactive features.
 
-## Development server
+## Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The codebase is organized with a focus on modularity and maintainability. Here's a brief overview of the directory structure and key files:
 
-## Code scaffolding
+- `.vscode/`: Contains configurations for Visual Studio Code.
+- `src/`: The source directory where the Angular components, services, modules, and other assets are located.
+- `.browserslistrc`: Configurations for target browsers compatibility.
+- `.editorconfig`: Ensures consistent coding styles for multiple developers working on the project.
+- `.gitattributes`: Defines attributes per path in the repository.
+- `.gitignore`: Specifies intentionally untracked files to ignore by Git.
+- `angular.json`: CLI configuration defaults for all projects in the workspace, including configuration options for build, serve, and test tools.
+- `karma.conf.js`: Configuration file for the Karma test runner.
+- `package-lock.json` & `package.json`: Lists the project dependencies and locks the versions for consistent installs across environments.
+- `tsconfig.*.json`: TypeScript compiler configuration files.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Quick Start
 
-## Build
+To get this application up and running, follow these simple steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+- Node.js (https://nodejs.org/)
+- Angular CLI (https://angular.io/cli)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/olfaselmi/Intern-web-application.git
